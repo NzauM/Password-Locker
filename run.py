@@ -66,11 +66,10 @@ def main():
 
         if Users.find_user_byPassword(password).password == password:
             print("Welcome .Press dp-to display passwords,cp-to create a new password, and del to delete a password")
-        else:
+        elif Users.find_user_byPassword(password).password != password:
             print("Wrong credetials")
 
 if __name__ == '__main__':
     main()
-
 
 
