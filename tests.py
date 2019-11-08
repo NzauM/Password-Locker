@@ -13,6 +13,15 @@ class TestUsers(unittest.TestCase):
         '''
         self.new_user = Users("Merciee","Mercy","Nzau","October","Mercy10")
 
+    def tearDown(self):
+        '''
+        The tear down method which will clean up after every test case is complete
+        '''
+
+        Users.users_list = []
+        '''
+        This will remove every test user instance after evry test case is complete
+        '''
 
     def test_init(self):
         '''
@@ -24,6 +33,15 @@ class TestUsers(unittest.TestCase):
         self.assertEqual(self.new_user.last_name,"Nzau")
         self.assertEqual(self.new_user.birth_month,"October")
         self.assertEqual(self.new_user.password,"Mercy10")
+
+    def test_save_users(self):
+        '''
+        Test case to test if the user objects are saved 
+        '''
+        self.new_user.save_users()
+        self.assertEqual(len(Users.users_list),1)
+
+    
      
 
 
