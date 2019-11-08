@@ -41,6 +41,17 @@ class TestUsers(unittest.TestCase):
         self.new_user.save_users()
         self.assertEqual(len(Users.users_list),1)
 
+
+    f test_save_moreThanOne_USer(self):
+        '''
+        Testcase to test whether more than one user can be added to the user list
+        '''
+
+        self.new_user.save_users()
+        test_user = Users("BeckyJ","Becka","Mbulwa","July","Becka7")
+        test_user.save_users()
+        self.assertEqual(len(Users.users_list),2)
+
     
      
 
