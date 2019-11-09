@@ -20,6 +20,7 @@ class TestUsers(unittest.TestCase):
         '''
 
         Users.users_list = []
+        Credentials.credentials_list = []
        
         '''
         This will remove every test user instance after evry test case is complete
@@ -69,6 +70,15 @@ class TestUsers(unittest.TestCase):
         test_user = Users("BeckyJ","Becka","Mbulwa","July","Becka7")
         test_user.save_users()
         self.assertEqual(len(Users.users_list),2)
+
+    def test_save_multiple_credentials(self):
+        '''
+        TO test if more than one objects of the credentials can be saved
+        '''
+        self.new_credential.save_credentials()
+        test_credentials = Credentials("Instagram","Miss Nzau","M8742")
+        test_credentials.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list),2)
 
     def test_find_user_byPassword(self):
         '''
