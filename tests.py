@@ -52,6 +52,14 @@ class TestUsers(unittest.TestCase):
         self.new_user.save_users()
         self.assertEqual(len(Users.users_list),1)
 
+    def test_save_credentials(self):
+        '''
+        Test_save_credentials a tes tcase to see if a credential object has been saved
+        '''
+
+        self.new_credential.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list),1) 
+
     def test_save_moreThanOne_USer(self):
         '''
         Testcase to test whether more than one user can be added to the user list
