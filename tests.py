@@ -1,5 +1,6 @@
 import unittest
 from users import Users
+from credentials import Credentials
 
 class TestUsers(unittest.TestCase):
     '''
@@ -12,14 +13,14 @@ class TestUsers(unittest.TestCase):
         This method will run before each class
         '''
         self.new_user = Users("Merciee","Mercy","Nzau","October","Mercy10")
-
-
+        self.new_credential = Credentials("Facebook","Mercy Nzau","M2001")
     def tearDown(self):
         '''
         The tear down method which will clean up after every test case is complete
         '''
 
         Users.users_list = []
+       
         '''
         This will remove every test user instance after evry test case is complete
         '''
@@ -35,6 +36,14 @@ class TestUsers(unittest.TestCase):
         self.assertEqual(self.new_user.last_name,"Nzau")
         self.assertEqual(self.new_user.birth_month,"October")
         self.assertEqual(self.new_user.password,"Mercy10")
+
+    def test_credentials_init(self):
+        '''
+        To check if the credentials object is correctly instantiated
+        '''
+        self.assertEqual(self.new_credential.app_name,"Facebook")
+        self.assertEqual(self.new_credential.app_username,"Mercy Nzau")
+        self.assertEqual(self.new_credential.app_password,"M2001")
 
     def test_save_users(self):
         '''
@@ -76,6 +85,8 @@ class TestUsers(unittest.TestCase):
         user_registered = Users.user_registered("BeckyJ")
         
         self.assertTrue(user_registered)
+
+
 
     
 
