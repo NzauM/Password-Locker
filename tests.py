@@ -92,6 +92,19 @@ class TestUsers(unittest.TestCase):
         User_found = Users.find_user_byPassword("Becka7")
         self.assertEqual(User_found.password,test_user.password)
 
+    def test_find_credentials_using_appname(self):
+        '''
+        This test wil check if a user can find their saved credentials using 
+        the respective appname
+        '''
+
+        self.new_credential.save_credentials()
+        test_credentials = Credentials("Instagram","Miss Nzau","M8742")
+        test_credentials.save_credentials()
+
+        credentials_found = Credentials.find_credentials_using_appname("Instagram")
+        self.assertEqual(credentials_found.app_username,test_credentials.app_username)
+
     def test_user_registered(self):
         '''
         To check if a user is already registered
@@ -100,9 +113,15 @@ class TestUsers(unittest.TestCase):
         test_user = Users("BeckyJ","Becka","Mbulwa","July","Becka7")
         test_user.save_users()
 
-        user_registered = Users.user_registered("BeckyJ")
+        user_registered = Users.user_registered("BecKyJ","Becka7")
         
-        self.assertTrue(user_registered)
+        self.assertFalse(user_registered)
+
+    def test_display_credentials(self):
+        '''
+        Test_Display_credentials will check if all redential of a user can be displayed
+        '''
+        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
 
 
 

@@ -36,13 +36,13 @@ class Users:
         
 
     @classmethod
-    def user_registered(cls,user_name):
+    def user_registered(cls,user_name,password):
         '''
         Method that checks if a user exists in the user list.Will help in authentication
         '''
 
         for user in cls.users_list:
-            if user.user_name == user_name:
+            if user.user_name and user.password == user_name and password:
                 return True
             
-        return false
+            return False

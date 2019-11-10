@@ -16,3 +16,28 @@ class Credentials:
         self.app_username = app_username
         self.app_password = app_password
 
+
+    @classmethod
+    def find_credentials_using_appname(cls,app_name):
+        '''
+        The find credentials by appname method will return the credentials
+        that match the appname for the user.
+
+        The arguments include the appname to search for.
+        
+        It will return the credentials that match the appname for that user.
+
+        '''
+
+        for credentials in cls.credentials_list:
+            if credentials.app_name == app_name:
+                return credentials
+
+    @classmethod
+    def display_credentials(cls):
+        '''
+        This method will return the credential list
+        '''
+
+        return cls.credentials_list
+
