@@ -117,6 +117,15 @@ class TestUsers(unittest.TestCase):
         
         self.assertFalse(user_registered)
 
+    def test_credential_exists(self):
+        self.new_credential.save_credentials()
+        test_credentials = Credentials("Instagram","Miss Nzau","M8742")
+        test_credentials.save_credentials()
+
+        credential_exists = Credentials.credential_exists("Instagram","M8742")
+        self.assertTrue(credential_exists)
+        
+
     def test_display_credentials(self):
         '''
         Test_Display_credentials will check if all redential of a user can be displayed

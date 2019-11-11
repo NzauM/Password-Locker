@@ -40,14 +40,26 @@ def user_registered(password):
     '''
     return Users.user_registered(password)
 
+def credential_exists(aname):
+    return Credentials.credential_exists(aname)
+
 def find_user_byPassword(password):
     '''
     This function will get a user's details using the password
     '''
     return Users.find_user_byPassword(password)
 
+def find_credential2_using_appname(aname):
+    return Credentials.find_credentials_using_appname(aname)
+
 def allow_user(username,password):
     return Users.user_registered(username,password)
+
+def find_app_by_appname(aname):
+    return Credentials.credential_exists(aname)
+
+def delete_credential(aname):
+    Credentials.credentials_list.remove(aname)
 
 def main():
     print("Hello Welcome to to the password locker.What is your name??")
@@ -150,6 +162,32 @@ def main():
 
                     else:
                         print("That password does not exist")
+
+                elif shortcode == "del":
+                    print("Name of app to delete password for")
+                    appdel = input().lower()
+
+
+                    if find_app_by_appname(appdel):
+                        vardel = find_credential2_using_appname(appdel)
+                        delete_credential(vardel)
+                        print("Credentials deleted")
+
+                    else:
+                        print("Credential does not exist")
+
+                    # if find_app_by_appname(appdel):
+                    #     print(f"Are you sure you want to delete credentials for {aname}.Press Y for yes and N for no")
+                    #     confirm = input().lower()
+                    #     if confirm == "y":
+                    #         delete_credential()
+                        
+
+                    #     else:
+                    #         print("Credential not deleted")
+                    
+                    
+                     
 
                 else:
                     break

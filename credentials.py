@@ -46,3 +46,12 @@ class Credentials:
         '''
         Credentials.credentials_list.remove(self)
 
+
+    @classmethod
+    def credential_exists(cls,aname):
+        for Credentials in cls.credentials_list:
+            if Credentials.aname == aname:
+                return True
+
+        return False
+
