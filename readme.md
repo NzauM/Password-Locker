@@ -26,8 +26,8 @@ This applcation uses;
 ## Support and contact details
 
 For any issues or contributions,please feel free to contact me on:
-<<https://github.com/NzauM/Password_locker/issues> for any issues or bug reports.
-<https://github.com/NzauM/Password_locker./pulls> for any contributions or pull requests.
+<https://github.com/NzauM/Password_Locker/issues> for any issues or bug reports.
+<https://github.com/NzauM/Password_Locker./pulls> for any contributions or pull requests.
 
 ## Running unit tests
 
