@@ -122,7 +122,7 @@ class TestUsers(unittest.TestCase):
         test_credentials = Credentials("Instagram","Miss Nzau","M8742")
         test_credentials.save_credentials()
 
-        credential_exists = Credentials.credential_exists("Instagram","M8742")
+        credential_exists = Credentials.credential_exists("Instagram")
         self.assertTrue(credential_exists)
         
 
