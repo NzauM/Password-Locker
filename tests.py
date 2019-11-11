@@ -103,7 +103,7 @@ class TestUsers(unittest.TestCase):
         test_credentials.save_credentials()
 
         credentials_found = Credentials.find_credentials_using_appname("Instagram")
-        self.assertEqual(credentials_found.app_username,test_credentials.app_username)
+        self.assertEqual(credentials_found.aname,test_credentials.aname)
 
     def test_user_registered(self):
         '''
@@ -123,7 +123,14 @@ class TestUsers(unittest.TestCase):
         '''
         self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
 
-
+    def test_delete_credentials(self):
+        '''
+        Test to confirm if a user can delete a credential
+        '''
+        self.new_credential.save_credentials()
+        test_credentials = Credentials("Instagram","Miss Nzau","M8742")
+        test_credentials.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list),2)
 
     
 

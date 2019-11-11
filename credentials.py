@@ -17,7 +17,7 @@ class Credentials:
         self.apassword = apassword
 
     @classmethod
-    def find_credentials_using_appname(cls,app_name):
+    def find_credentials_using_appname(cls,aname):
         '''
         The find credentials by appname method will return the credentials
         that match the appname for the user.
@@ -29,7 +29,7 @@ class Credentials:
         '''
 
         for credentials in cls.credentials_list:
-            if credentials.app_name == app_name:
+            if credentials.aname == aname:
                 return credentials
 
     @classmethod
@@ -39,4 +39,10 @@ class Credentials:
         '''
 
         return cls.credentials_list
+
+    def delete_credentials(self):
+        '''
+        Function to delete a credential
+        '''
+        Credentials.credentials_list.remove(self)
 
