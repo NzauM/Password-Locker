@@ -42,7 +42,7 @@ class Users:
         '''
 
         for user in cls.users_list:
-            if user.user_name and user.password == user_name and password:
+            if user.user_name == user_name and user.password == password:
                 return True
             
             return False

@@ -11,11 +11,10 @@ class Credentials:
 
         Credentials.credentials_list.append(self)
 
-    def __init__ (self,app_name,app_username,app_password):
-        self.app_name = app_name
-        self.app_username = app_username
-        self.app_password = app_password
-
+    def __init__ (self,aname,ausername,apassword):
+        self.aname = aname
+        self.ausername = ausername
+        self.apassword = apassword
 
     @classmethod
     def find_credentials_using_appname(cls,app_name):

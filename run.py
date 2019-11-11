@@ -10,11 +10,11 @@ def create_user(username,firstname,lastname,birthmonth,password):
     new_users = Users(username,firstname,lastname,birthmonth,password)
     return new_users
 
-def create_credentials(nameapp,usernameapp,passwordapp):
+def create_credentials(aname,ausername,apassword):
     '''
     Function to create new passwords for the application
     '''
-    new_credentials = Credentials(nameapp,usernameapp,passwordapp)
+    new_credentials = Credentials(aname,ausername,apassword)
     return new_credentials
 
 def save_users(Users):
@@ -55,59 +55,59 @@ def main():
     print(f"Welcome{name} you will need to create an account first")
     print("/n")
 
-    while True:
-        print("Create your account")
-        print("/n")
-        print("Enter a username of your choice")
-        username = input()
+    # while True:
+    print("Create your account")
+    print("/n")
+    print("Enter a username of your choice")
+    username = input()
 
-        print("First Name ...")
-        firstname = input()
+    print("First Name ...")
+    firstname = input()
 
-        print("Last Name ...")
-        lastname = input()
+    print("Last Name ...")
+    lastname = input()
 
-        print("BirthMonth....")
-        birthmonth = input()
+    print("BirthMonth....")
+    birthmonth = input()
 
-        print("YOur desired password...")
-        password = input()
+    print("YOur desired password...")
+    password = input()
 
+    save_users(create_user(username,firstname,lastname,birthmonth,password))
+    print("/n")
+
+    print(f"{firstname}{lastname} ,Your new account has been created")
+    print("/n")
+    # print("Please login with your credentials")
+
+    # print("Enter Username")
+    # userlogin = input()
+
+    # print("Enter password")
+    # passwordlogin = input()
+
+    if username=='' or firstname=='' or lastname=='' or password=='':
+        print("Please fill all the fields")
+    else:
         save_users(create_user(username,firstname,lastname,birthmonth,password))
-        print("/n")
+        print(f"{firstname}{lastname} Your account has been created,Your new user name is{username}")
 
-        print(f"{firstname}{lastname} ,Your new account has been created")
-        print("/n")
-        # print("Please login with your credentials")
+        print("Now login with your credentials")
+        print('/n')
 
-        # print("Enter Username")
-        # userlogin = input()
+        print("Enter your username")
+        userlogin = input()
+        print('/n')
 
-        # print("Enter password")
-        # passwordlogin = input()
+        print("Enter your password")
+        passwordlogin = input()
+        
 
-        if username=='' or firstname=='' or lastname=='' or password=='':
-            print("Please fill all the fields")
-        else:
-            save_users(create_user(username,firstname,lastname,birthmonth,password))
-            print(f"{firstname}{lastname} Your account has been created,Your new user name is{username}")
-
-            print("Now login with your credentials")
-            print('/n')
-
-            print("Enter your username")
-            userlogin = input()
-            print('/n')
-
-            print("Enter your password")
-            passwordlogin = input()
-            
-
-            if allow_user(userlogin,passwordlogin):
-                print(f"{userlogin} welcome to password locker")
+        if allow_user(userlogin,passwordlogin):
+            print(f"{userlogin} welcome to password locker")
 
 
-                # while True:
+            while True:
                 print("""
                 Use the following codes to navigate:
                 cp - To create a password for a new application
@@ -142,11 +142,11 @@ def main():
                     print(f"New password for {aname} has been created.The password is {apassword}")
 
                 elif shortcode == "vp":
-                    if display_credentials():
+                    if display_credentials()!= "":
                         print("Here is a list of all your passwords")
 
                         for credentials in display_credentials():
-                            print(f"{credentials.aname}{credentials.ausername}{credentials.apassword}")
+                            print(f"Credentials for {credentials.aname} your username is {credentials.ausername}  and your password is {credentials.apassword}")
 
                     else:
                         print("That password does not exist")

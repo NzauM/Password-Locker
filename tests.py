@@ -42,9 +42,9 @@ class TestUsers(unittest.TestCase):
         '''
         To check if the credentials object is correctly instantiated
         '''
-        self.assertEqual(self.new_credential.app_name,"Facebook")
-        self.assertEqual(self.new_credential.app_username,"Mercy Nzau")
-        self.assertEqual(self.new_credential.app_password,"M2001")
+        self.assertEqual(self.new_credential.aname,"Facebook")
+        self.assertEqual(self.new_credential.ausername,"Mercy Nzau")
+        self.assertEqual(self.new_credential.apassword,"M2001")
 
     def test_save_users(self):
         '''
