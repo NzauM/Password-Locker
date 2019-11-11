@@ -1,9 +1,12 @@
 # Password LOcker
+
 A python application for saving passwords.
 
 ## Description
+
 Password Locker is an application that lets you Create an account where you can save passwords for all your applications.You can also view all your saved passwords and 
 delete those you no longer need.
+
 ## Behaviour  Driven Development
 
 User Requirements
