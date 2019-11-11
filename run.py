@@ -90,13 +90,7 @@ def main():
 
     print(f"{firstname}{lastname} ,Your new account has been created")
     print("/n")
-    # print("Please login with your credentials")
-
-    # print("Enter Username")
-    # userlogin = input()
-
-    # print("Enter password")
-    # passwordlogin = input()
+   
 
     if username=='' or firstname=='' or lastname=='' or password=='':
         print("Please fill all the fields")
